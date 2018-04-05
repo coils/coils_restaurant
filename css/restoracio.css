@@ -1,0 +1,282 @@
+/**
+ * restoracio.css
+ * 
+ * Restoracio レスポンシブWEBデザイン
+ * 
+ * @copyright (c) 2018 Yuki Tsuji
+ */
+
+body {
+  background-color: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+  color: #003366;
+  font-size: 100%;
+  text-align: left;
+  margin: 0 auto;
+  width: 920px;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  color: #003366;
+  font-size: 100%;
+}
+
+fieldset {
+  border: 1px solid #003366;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  padding: 5px;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid #CCCCCC;
+  line-height: 1.5;
+}
+
+table.type th {
+  width: 300px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  background: #AAAAAA;
+  color: #003366;
+}
+
+table.type td {
+  width: 300px;
+  padding: 10px;
+  vertical-align: top;
+}
+
+table.type2 th {
+  width: 920px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  background: #AAAAAA;
+  color: #003366;
+}
+
+table.type2 td {
+  width: 920px;
+  padding: 10px;
+  vertical-align: top;
+}
+
+hr {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #555555;
+  height: 1px;
+}
+
+.word_wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.copyright {
+  color: #999999;
+  font-style: normal;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 750px) {
+  
+  body {
+    background-color: #F5F5F5;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+    color: #003366;
+    font-size: 100%;
+    text-align: left;
+    margin: 0 auto;
+    width: auto;
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button, input, select, textarea {
+    font-family: inherit;
+    color: #003366;
+    font-size: 100%;
+  }
+
+  fieldset {
+    border: 1px solid #003366;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #CCCCCC;
+    line-height: 1.5;
+  }
+
+  table.type th {
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #AAAAAA;
+    color: #003366;
+  }
+
+  table.type td {
+    width: 300px;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  table.type2 th {
+    width: 920px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #AAAAAA;
+    color: #003366;
+  }
+
+  table.type2 td {
+    width: 920px;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  input.form {
+    width: 80vw;
+  }
+
+  hr {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #555555;
+    height: 1px;
+  }
+
+  .word_wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .copyright {
+    color: #999999;
+    font-style: normal;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  body {
+    background-color: #F5F5F5;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif;
+    color: #003366;
+    font-size: 100%;
+    text-align: left;
+    margin: 0 auto;
+    width: auto;
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button, input, select, textarea {
+    font-family: inherit;
+    color: #003366;
+    font-size: 100%;
+  }
+
+  fieldset {
+    border: 1px solid #003366;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #CCCCCC;
+    line-height: 1.5;
+  }
+
+  table.type th {
+    width: 300px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #AAAAAA;
+    color: #003366;
+  }
+
+  table.type td {
+    width: 300px;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  table.type2 th {
+    width: 920px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #AAAAAA;
+    color: #003366;
+  }
+
+  table.type2 td {
+    width: 920px;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  input.form {
+    width: 70vw;
+  }
+
+  hr {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #555555;
+    height: 1px;
+  }
+
+  .word_wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .copyright {
+    color: #999999;
+    font-style: normal;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
