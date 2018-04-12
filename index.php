@@ -15,7 +15,7 @@ require_once './require_once/functions.php';
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Yuki Tsuji">
-        <meta name="description" content="Restoracioは，レストラン情報を検索するWebアプリケーションです．">
+        <meta name="description" content="Restoracioは，レストラン情報を検索することが出来るWebアプリケーションです．">
         <meta name="robots" content="noindex, nofollow, noarchive">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./css/restoracio.css" rel="stylesheet">
