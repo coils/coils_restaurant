@@ -13,7 +13,7 @@
  * @return string
  */
 function h($string) {
-    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+    return str_replace('&lt;BR&gt;', '<BR>', htmlspecialchars($string, ENT_QUOTES, 'UTF-8'));
 }
 
 /**
