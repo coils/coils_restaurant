@@ -58,7 +58,7 @@ $restaurants = Gnavi_api::getRestaurants();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if ($restaurants->total_hit_count == 1): ?>
+                            <?php if ($restaurants->total_hit_count == 1 || $restaurants->total_hit_count % 10 == 1 && $restaurants->page_offset == ceil($restaurants->total_hit_count / 10)): ?>
                                 <tr>
                                     <td>
                                         <div style="text-align: center;">
@@ -103,7 +103,11 @@ $restaurants = Gnavi_api::getRestaurants();
                     </table>
 
                     <div>
-                        <?php echo paging($restaurants->page_offset, $restaurants->total_hit_count); ?>
+                        <?php if ($restaurants->total_hit_count <= 1000): ?>
+                            <?php echo paging($restaurants->page_offset, $restaurants->total_hit_count); ?>
+                        <?php else: ?>
+                            <?php echo paging($restaurants->page_offset, 1000); ?>
+                        <?php endif; ?>
                     </div>
 
                 <?php endif; ?>
