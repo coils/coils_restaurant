@@ -36,18 +36,18 @@ require_once './require_once/functions.php';
                     // 取得失敗した場合，エラー表示
                     function(error) {
                         switch(error.code) {
-                        case 1: // PERMISSION_DENIED
-                            alert("位置情報の利用が許可されていません．");
-                            break;
-                        case 2: // POSITION_UNAVAILABLE
-                            alert("現在位置が取得できませんでした．");
-                            break;
-                        case 3: // TIMEOUT
-                            alert("タイムアウトになりました．");
-                            break;
-                        default:
-                            alert("その他のエラー(エラーコード:"+error.code+")");
-                            break;
+                            case 1: // PERMISSION_DENIED
+                                alert("位置情報の利用が許可されていません．");
+                                break;
+                            case 2: // POSITION_UNAVAILABLE
+                                alert("現在位置が取得出来ませんでした．");
+                                break;
+                            case 3: // TIMEOUT
+                                alert("タイムアウトになりました．");
+                                break;
+                            default:
+                                alert("その他のエラー(エラーコード:"+error.code+")");
+                                break;
                         }
                     }
                 );
@@ -61,8 +61,11 @@ require_once './require_once/functions.php';
             <fieldset>
             <legend>Restoracioへようこそ</legend>
             <p>
-                Restoracioは，レストラン情報を検索するWebアプリケーションです．
+                Restoracioは，レストラン情報を検索することが出来るWebアプリケーションです．
             </p>
+            <p>
+                検索結果は，1000件までしか表示することが出来ません．
+            </p>   
             <p>
                 位置情報取得ボタンを押すと，緯度と経度のフォームに現在位置の座標が入力されます．
             </p>
