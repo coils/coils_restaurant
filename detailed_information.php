@@ -29,13 +29,7 @@ $restaurants = Gnavi_api::getRestaurants();
 
         <div class="word_wrap">
 
-            <form action="search_result_list.php" method="GET">
-                <input type="hidden" name="freeword" id="freeword" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
-                <input type="hidden" name="latitude" id="latitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
-                <input type="hidden" name="longitude" id="longitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>">
-                <input type="hidden" name="range" id="range" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'range')); ?>">
-                <button type="submit">検索結果一覧</button>
-            </form>
+            <button type="button" onclick="history.back()">戻る</button>
 
             <h1>店舗詳細情報</h1>
 
@@ -114,9 +108,9 @@ $restaurants = Gnavi_api::getRestaurants();
                         </tr>
                         <tr>
                             <td>
-                                <?php echo h($restaurants->rest->access->line) ?><br />
-                                <?php echo h($restaurants->rest->access->station) ?><br />
-                                <?php echo h($restaurants->rest->access->walk) ?>分<br />
+                                <?php echo h($restaurants->rest->access->line); ?><br />
+                                <?php echo h($restaurants->rest->access->station); ?><br />
+                                <?php echo h($restaurants->rest->access->walk); ?>分<br />
                                 <?php echo h($restaurants->rest->access->note); ?>
                             </td>
                         </tr>
@@ -136,6 +130,14 @@ $restaurants = Gnavi_api::getRestaurants();
                 <a href="http://api.gnavi.co.jp/api/scope/" target="_blank">
                 <img src="http://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
                 </a>
+            </div>
+
+            <br />
+
+            <div style="text-align: center;">
+                <form action="./" name="toppage" method="POST">
+                    <a href="javascript:toppage.submit()">トップページ</a>
+                </form>
             </div>
 
             <footer>
