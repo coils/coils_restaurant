@@ -47,6 +47,7 @@ $restaurants = Gnavi_api::getRestaurants();
                 <?php else: ?>
                     <div>
                         <p>該当件数:<?php echo $restaurants->total_hit_count; ?>件</p>
+                        <p><?php echo $restaurants->page_offset; ?>ページ目</p>
                     </div>
                     <table class="type">
                         <thead>
@@ -67,13 +68,20 @@ $restaurants = Gnavi_api::getRestaurants();
                                     </td>
                                     <td>
                                         <?php echo h($restaurants->rest->name); ?><br />
-                                        <a href="detailed_information.php?id=<?php echo h($restaurants->rest->id); ?>&freeword=<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>&latitude=<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>&longitude=<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>&range=<?php echo h(filter_input(INPUT_GET, 'range')); ?>">詳細情報</a>
+                                        <?php
+                                            $uri = "detailed_information.php";
+                                            $id = [
+                                                'id' => $restaurants->rest->id
+                                            ];
+                                            $url = sprintf("%s?%s", $uri, http_build_query($id));
+                                        ?>
+                                        <a href="<?php echo h($url); ?>">詳細情報</a>
                                     </td>
                                     <td><?php echo h($restaurants->rest->category); ?></td>
                                     <td>
-                                        <?php echo h($restaurants->rest->access->line) ?><br />
-                                        <?php echo h($restaurants->rest->access->station) ?><br />
-                                        <?php echo h($restaurants->rest->access->walk) ?>分<br />
+                                        <?php echo h($restaurants->rest->access->line); ?><br />
+                                        <?php echo h($restaurants->rest->access->station); ?><br />
+                                        <?php echo h($restaurants->rest->access->walk); ?>分<br />
                                         <?php echo h($restaurants->rest->access->note); ?>
                                     </td>
                                 </tr>
@@ -87,13 +95,20 @@ $restaurants = Gnavi_api::getRestaurants();
                                         </td>
                                         <td>
                                             <?php echo h($rest->name); ?><br />
-                                            <a href="detailed_information.php?id=<?php echo h($rest->id); ?>&freeword=<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>&latitude=<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>&longitude=<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>&range=<?php echo h(filter_input(INPUT_GET, 'range')); ?>">詳細情報</a>
+                                            <?php
+                                                $uri = "detailed_information.php";
+                                                $id = [
+                                                    'id' => $rest->id
+                                                ];
+                                                $url = sprintf("%s?%s", $uri, http_build_query($id));
+                                            ?>
+                                            <a href="<?php echo h($url); ?>">詳細情報</a>
                                         </td>
                                         <td><?php echo h($rest->category); ?></td>
                                         <td>
-                                            <?php echo h($rest->access->line) ?><br />
-                                            <?php echo h($rest->access->station) ?><br />
-                                            <?php echo h($rest->access->walk) ?>分<br />
+                                            <?php echo h($rest->access->line); ?><br />
+                                            <?php echo h($rest->access->station); ?><br />
+                                            <?php echo h($rest->access->walk); ?>分<br />
                                             <?php echo h($rest->access->note); ?>
                                         </td>
                                     </tr>
