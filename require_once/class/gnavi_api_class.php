@@ -22,17 +22,17 @@ class Gnavi_api {
      * @return object
      */
     public static function getRestaurants() {
-        $uri = "https://api.gnavi.co.jp/RestSearchAPI/20150630/";
-        $acckey = self::$token;
+        $api_url = "https://api.gnavi.co.jp/RestSearchAPI/20150630/";
+        $access_key = self::$token;
         $format = "json";
         $get = [
-            'format' => $format
-            , 'keyid' => $acckey
+            'format' => $format,
+            'keyid' => $access_key
         ];
         if (!is_null(filter_input_array(INPUT_GET))) {
             $get += filter_input_array(INPUT_GET);
         }
-        $url = sprintf("%s?%s", $uri, http_build_query($get));
+        $url = sprintf("%s?%s", $api_url, http_build_query($get));
         $json = file_get_contents($url);
         $object = json_decode($json);
         return $object;
