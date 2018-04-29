@@ -27,8 +27,7 @@ function paging($page, $total) {
     if ($total < 1) {
         return;
     }
-    $query = (is_array(filter_input_array(INPUT_GET))) ?
-        filter_input_array(INPUT_GET) : [];
+    $query = (is_array(filter_input_array(INPUT_GET))) ? filter_input_array(INPUT_GET) : [];
     if (isset($query['offset_page'])) {
         unset($query['offset_page']);
     }
@@ -45,7 +44,7 @@ function paging($page, $total) {
     $html = '';
     if ($page > 1) {
         $html .= sprintf($placeholder, '', 1, $querystring, '&laquo;');
-        $html .= sprintf($placeholder, '', $page, $querystring, '前へ');
+        $html .= sprintf($placeholder, '', $page - 1, $querystring, '前へ');
     }
     for ($i = $max - 6; $i < $min + 7; $i++) {
         if ($i > -1 && $i < $maxPage) {
