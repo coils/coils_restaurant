@@ -70,7 +70,7 @@ require_once './require_once/functions.php';
                 位置情報取得ボタンを押すと，緯度と経度のフォームに現在位置の座標が入力されます．
             </p>
             <div style="text-align: center;">
-                <button onclick="getPosition();">位置情報取得</button>
+                <button onclick="getPosition();" class="gray_button">位置情報取得</button>
             </div>
             </fieldset>
 
@@ -102,7 +102,7 @@ require_once './require_once/functions.php';
                             <option value="5">3km</option>
                         </select>
                     </p>
-                    <button type="submit">検索</button>
+                    <button type="submit" class="gray_button">検索</button>
                 </form>
             </div>
             </fieldset>
