@@ -29,7 +29,7 @@ $restaurants = Gnavi_api::getRestaurants();
 
         <div class="word_wrap">
 
-            <button type="button" onclick="history.back()">戻る</button>
+            <button type="button" onclick="history.back()" class="gray_button">戻る</button>
 
             <h1>店舗詳細情報</h1>
 
