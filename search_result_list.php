@@ -33,7 +33,7 @@ $restaurants = Gnavi_api::getRestaurants();
                 <input type="hidden" name="freeword" id="freeword" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
                 <input type="hidden" name="latitude" id="latitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
                 <input type="hidden" name="longitude" id="longitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>">
-                <button type="submit">トップページ</button>
+                <button type="submit" class="gray_button">トップページ</button>
             </form>
 
             <h1>検索結果一覧</h1>
@@ -47,14 +47,12 @@ $restaurants = Gnavi_api::getRestaurants();
                 <?php else: ?>
                     <div>
                         <p>該当件数:<?php echo $restaurants->total_hit_count; ?>件</p>
-                        <p><?php echo $restaurants->page_offset; ?>ページ目</p>
                     </div>
                     <table class="type">
                         <thead>
                             <tr>
                                 <th>画像</th>
                                 <th>店舗名</th>
-                                <th>カテゴリー</th>
                                 <th>アクセス</th>
                             </tr>
                         </thead>
@@ -68,16 +66,8 @@ $restaurants = Gnavi_api::getRestaurants();
                                     </td>
                                     <td>
                                         <?php echo h($restaurants->rest->name); ?><br />
-                                        <?php
-                                            $uri = "detailed_information.php";
-                                            $id = [
-                                                'id' => $restaurants->rest->id
-                                            ];
-                                            $url = sprintf("%s?%s", $uri, http_build_query($id));
-                                        ?>
-                                        <a href="<?php echo h($url); ?>">詳細情報</a>
+                                        <a href="<?php echo h(shop_url($restaurants->rest->id)); ?>">詳細情報</a>
                                     </td>
-                                    <td><?php echo h($restaurants->rest->category); ?></td>
                                     <td>
                                         <?php echo h($restaurants->rest->access->line); ?><br />
                                         <?php echo h($restaurants->rest->access->station); ?><br />
@@ -95,16 +85,8 @@ $restaurants = Gnavi_api::getRestaurants();
                                         </td>
                                         <td>
                                             <?php echo h($rest->name); ?><br />
-                                            <?php
-                                                $uri = "detailed_information.php";
-                                                $id = [
-                                                    'id' => $rest->id
-                                                ];
-                                                $url = sprintf("%s?%s", $uri, http_build_query($id));
-                                            ?>
-                                            <a href="<?php echo h($url); ?>">詳細情報</a>
+                                            <a href="<?php echo h(shop_url($rest->id)); ?>">詳細情報</a>
                                         </td>
-                                        <td><?php echo h($rest->category); ?></td>
                                         <td>
                                             <?php echo h($rest->access->line); ?><br />
                                             <?php echo h($rest->access->station); ?><br />
