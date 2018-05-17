@@ -17,6 +17,20 @@ function h($string) {
 }
 
 /**
+ * 店舗ID付きのURLを生成する関数
+ * @param string $shop_id
+ * @return string
+ */
+function shop_url($shop_id) {
+    $uri = "detailed_information.php";
+    $id = [
+        'id' => $shop_id
+    ];
+    $url = sprintf("%s?%s", $uri, http_build_query($id));
+    return $url;
+}
+
+/**
  * ページング
  * @param int $page
  * @param int $total
@@ -33,7 +47,7 @@ function paging($page, $total) {
     }
     $querystring = http_build_query($query);
     $limit = 10;
-    $placeholder = "<span%s><a href=\"?offset_page=%d&%s\">%s</a></span> ";
+    $placeholder = "<span><a%s href=\"?offset_page=%d&%s\">%s</a></span> ";
 
     // 最大ページ数
     $maxPage = ceil($total / $limit);
@@ -48,7 +62,7 @@ function paging($page, $total) {
     }
     for ($i = $max - 6; $i < $min + 7; $i++) {
         if ($i > -1 && $i < $maxPage) {
-            $html .= sprintf($placeholder, ($i == $page - 1) ? ' class="active"' : '', $i + 1, $querystring, $i + 1);
+            $html .= sprintf($placeholder, ($i == $page - 1) ? ' class="black_font"' : '', $i + 1, $querystring, $i + 1);
         }
     }
     if ($page < $maxPage) {
