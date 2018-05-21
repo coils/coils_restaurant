@@ -12,7 +12,12 @@ Since it uses responsive web design, it is compatible with smartphones.
 
 When using, please change the access key of gnavi_api_class.php file.
 
-## Requirements
+## API
++ ぐるなびレストラン検索API
+
++ Geolocation API
+
+## Environment
 Restoracioは，以下の環境で動作確認を行いました．他の環境でも動作するかもしれませんが，サポートしていません．
 
 I have tested Restoracio on the following environment. Restoracio may work on the other environment, but I do not support the other setting.
