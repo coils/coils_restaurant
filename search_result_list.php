@@ -41,12 +41,12 @@ $restaurants = Gnavi_api::getRestaurants();
             <div>
                 <?php if (isset($restaurants->error)): ?>
                     <div>
-                        <p><?php echo $restaurants->error->code; ?></p>
-                        <p><?php echo $restaurants->error->message; ?></p>
+                        <p><?php echo h($restaurants->error->code); ?></p>
+                        <p><?php echo h($restaurants->error->message); ?></p>
                     </div>
                 <?php else: ?>
                     <div>
-                        <p>該当件数:<?php echo $restaurants->total_hit_count; ?>件</p>
+                        <p>該当件数:<?php echo h($restaurants->total_hit_count); ?>件</p>
                     </div>
                     <table class="type">
                         <thead>
@@ -60,38 +60,72 @@ $restaurants = Gnavi_api::getRestaurants();
                             <?php if ($restaurants->total_hit_count == 1 || $restaurants->total_hit_count % 10 == 1 && $restaurants->page_offset == ceil($restaurants->total_hit_count / 10)): ?>
                                 <tr>
                                     <td>
-                                        <div style="text-align: center;">
-                                            <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
-                                        </div>
+                                        <?php if (mb_strlen($restaurants->rest->image_url->shop_image1) >= 1): ?>
+                                            <div style="text-align: center;">
+                                                <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="gray_font">
+                                                <?php echo h('データが存在しません．'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </td>
                                     <td>
-                                        <?php echo h($restaurants->rest->name); ?><br />
-                                        <a href="<?php echo h(shop_url($restaurants->rest->id)); ?>">詳細情報</a>
+                                        <?php if (mb_strlen($restaurants->rest->name) >= 1): ?>
+                                            <a href="<?php echo h(shop_url($restaurants->rest->id)); ?>"><?php echo h($restaurants->rest->name); ?></a>
+                                        <?php else: ?>
+                                            <div class="gray_font">
+                                                <?php echo h('データが存在しません．'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </td>
                                     <td>
-                                        <?php echo h($restaurants->rest->access->line); ?><br />
-                                        <?php echo h($restaurants->rest->access->station); ?><br />
-                                        <?php echo h($restaurants->rest->access->walk); ?>分<br />
-                                        <?php echo h($restaurants->rest->access->note); ?>
+                                        <?php if (mb_strlen($restaurants->rest->access->line) >= 1): ?>
+                                            <?php echo h($restaurants->rest->access->line); ?><br />
+                                            <?php echo h($restaurants->rest->access->station); ?><br />
+                                            <?php echo h($restaurants->rest->access->walk); ?>分<br />
+                                            <?php echo h($restaurants->rest->access->note); ?>
+                                        <?php else: ?>
+                                            <div class="gray_font">
+                                                <?php echo h('データが存在しません．'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php else: ?>
                                 <?php foreach ($restaurants->rest as $rest) : ?>
                                     <tr>
                                         <td>
-                                            <div style="text-align: center;">
-                                                <img src="<?php echo h($rest->image_url->shop_image1); ?>">
-                                            </div>
+                                            <?php if (mb_strlen($rest->image_url->shop_image1) >= 1): ?>
+                                                <div style="text-align: center;">
+                                                    <img src="<?php echo h($rest->image_url->shop_image1); ?>">
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="gray_font">
+                                                    <?php echo h('データが存在しません．'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                         </td>
                                         <td>
-                                            <?php echo h($rest->name); ?><br />
-                                            <a href="<?php echo h(shop_url($rest->id)); ?>">詳細情報</a>
+                                            <?php if (mb_strlen($rest->name) >= 1): ?>
+                                                <a href="<?php echo h(shop_url($rest->id)); ?>"><?php echo h($rest->name); ?></a>
+                                            <?php else: ?>
+                                                <div class="gray_font">
+                                                    <?php echo h('データが存在しません．'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                         </td>
                                         <td>
-                                            <?php echo h($rest->access->line); ?><br />
-                                            <?php echo h($rest->access->station); ?><br />
-                                            <?php echo h($rest->access->walk); ?>分<br />
-                                            <?php echo h($rest->access->note); ?>
+                                            <?php if (mb_strlen($rest->access->line) >= 1): ?>
+                                                <?php echo h($rest->access->line); ?><br />
+                                                <?php echo h($rest->access->station); ?><br />
+                                                <?php echo h($rest->access->walk); ?>分<br />
+                                                <?php echo h($rest->access->note); ?>
+                                            <?php else: ?>
+                                                <div class="gray_font">
+                                                    <?php echo h('データが存在しません．'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
