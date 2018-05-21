@@ -41,7 +41,7 @@ require_once './require_once/functions.php';
                                 alert("位置情報の利用が許可されていません．");
                                 break;
                             case 2: // POSITION_UNAVAILABLE
-                                alert("現在位置が取得できませんでした．");
+                                alert("現在位置が取得出来ませんでした．");
                                 break;
                             case 3: // TIMEOUT
                                 alert("タイムアウトになりました．");
