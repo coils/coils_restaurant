@@ -38,6 +38,16 @@ h1 {
   color: #FF4F02;
 }
 
+h2 {
+  background-color: #FFFFEE;
+  border-left: 7px solid #AAAAAA;
+  border-bottom: 1px dashed #AAAAAA;
+  font-size: 22px;
+  margin: 15px -15px 15px -22px;
+  padding: 5px 15px;
+  color: #FF6928;
+}
+
 table, th, td {
   border-collapse: collapse;
   border: 1px solid #CCCCCC;
@@ -87,6 +97,10 @@ hr {
   border-style: solid;
   border-color: #555555;
   height: 1px;
+}
+
+.gray_font {
+  color: #AAAAAA;
 }
 
 .gray_button {
