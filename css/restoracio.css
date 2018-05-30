@@ -58,6 +58,7 @@ table.type th {
   width: 300px;
   padding: 10px;
   font-weight: bold;
+  text-align: left;
   vertical-align: top;
   background: #FF6928;
   color: #FFFFFF;
@@ -74,6 +75,7 @@ table.type2 th {
   width: 920px;
   padding: 10px;
   font-weight: bold;
+  text-align: left;
   vertical-align: top;
   background: #FF6928;
   color: #FFFFFF;
