@@ -48,8 +48,12 @@ $restaurants = Gnavi_api::getRestaurants();
                             <td>
                                 <?php if (mb_strlen($restaurants->rest->image_url->shop_image1) >= 1 || mb_strlen($restaurants->rest->image_url->shop_image2) >= 1): ?>
                                     <div style="text-align: center;">
-                                        <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
-                                        <img src="<?php echo h($restaurants->rest->image_url->shop_image2); ?>">
+                                        <?php if (mb_strlen($restaurants->rest->image_url->shop_image1) >= 1): ?>
+                                            <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
+                                        <?php endif; ?>
+                                        <?php if (mb_strlen($restaurants->rest->image_url->shop_image2) >= 1): ?>
+                                            <img src="<?php echo h($restaurants->rest->image_url->shop_image2); ?>">
+                                        <?php endif; ?>
                                     </div>
                                 <?php else: ?>
                                     <div class="gray_font">
@@ -179,8 +183,7 @@ $restaurants = Gnavi_api::getRestaurants();
                                 <?php if (mb_strlen($restaurants->rest->access->line) >= 1): ?>
                                     <?php echo h($restaurants->rest->access->line); ?><br />
                                     <?php echo h($restaurants->rest->access->station); ?><br />
-                                    <?php echo h($restaurants->rest->access->walk); ?>分<br />
-                                    <?php echo h($restaurants->rest->access->note); ?>
+                                    <?php echo h($restaurants->rest->access->walk); ?>分
                                 <?php else: ?>
                                     <div class="gray_font">
                                         <?php echo h('データが存在しません．'); ?>
