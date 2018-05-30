@@ -64,6 +64,10 @@ $restaurants = Gnavi_api::getRestaurants();
                                             <div style="text-align: center;">
                                                 <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
                                             </div>
+                                        <?php elseif (mb_strlen($restaurants->rest->image_url->shop_image2) >= 1): ?>
+                                            <div style="text-align: center;">
+                                                <img src="<?php echo h($restaurants->rest->image_url->shop_image2); ?>">
+                                            </div>
                                         <?php else: ?>
                                             <div class="gray_font">
                                                 <?php echo h('データが存在しません．'); ?>
@@ -83,8 +87,7 @@ $restaurants = Gnavi_api::getRestaurants();
                                         <?php if (mb_strlen($restaurants->rest->access->line) >= 1): ?>
                                             <?php echo h($restaurants->rest->access->line); ?><br />
                                             <?php echo h($restaurants->rest->access->station); ?><br />
-                                            <?php echo h($restaurants->rest->access->walk); ?>分<br />
-                                            <?php echo h($restaurants->rest->access->note); ?>
+                                            <?php echo h($restaurants->rest->access->walk); ?>分
                                         <?php else: ?>
                                             <div class="gray_font">
                                                 <?php echo h('データが存在しません．'); ?>
@@ -99,6 +102,10 @@ $restaurants = Gnavi_api::getRestaurants();
                                             <?php if (mb_strlen($rest->image_url->shop_image1) >= 1): ?>
                                                 <div style="text-align: center;">
                                                     <img src="<?php echo h($rest->image_url->shop_image1); ?>">
+                                                </div>
+                                            <?php elseif (mb_strlen($rest->image_url->shop_image2) >= 1): ?>
+                                                <div style="text-align: center;">
+                                                    <img src="<?php echo h($rest->image_url->shop_image2); ?>">
                                                 </div>
                                             <?php else: ?>
                                                 <div class="gray_font">
@@ -119,8 +126,7 @@ $restaurants = Gnavi_api::getRestaurants();
                                             <?php if (mb_strlen($rest->access->line) >= 1): ?>
                                                 <?php echo h($rest->access->line); ?><br />
                                                 <?php echo h($rest->access->station); ?><br />
-                                                <?php echo h($rest->access->walk); ?>分<br />
-                                                <?php echo h($rest->access->note); ?>
+                                                <?php echo h($rest->access->walk); ?>分
                                             <?php else: ?>
                                                 <div class="gray_font">
                                                     <?php echo h('データが存在しません．'); ?>
