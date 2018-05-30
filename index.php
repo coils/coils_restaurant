@@ -68,7 +68,7 @@ require_once './require_once/functions.php';
 
             <br />
 
-            <?php if ($_SESSION['search_criteria'] === 'search_criteria'): ?>
+            <?php if (@$_SESSION['search_criteria'] === 'search_criteria'): ?>
                 <fieldset>
                 <legend>位置情報取得</legend>
                 <p>
@@ -89,7 +89,7 @@ require_once './require_once/functions.php';
                         <label for="freeword">検索ワード</label><br />
                         <input type="text" name="freeword" id="freeword" class="form" size="50" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
                     </p>
-                    <?php if ($_SESSION['search_criteria'] === 'search_criteria'): ?>
+                    <?php if (@$_SESSION['search_criteria'] === 'search_criteria'): ?>
                         <p>
                             <label for="latitude">緯度</label><br />
                             <input type="text" name="latitude" id="latitude" class="form" size="50" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
@@ -113,7 +113,7 @@ require_once './require_once/functions.php';
                         <button type="submit" class="gray_button">検索</button>
                     </p>
                 </form>
-                <?php if ($_SESSION['search_criteria'] === 'search_criteria'): ?>
+                <?php if (@$_SESSION['search_criteria'] === 'search_criteria'): ?>
                     <form action="" name="back_search_criteria" method="POST">
                         <input type="hidden" name="back_search_criteria" value="">
                         <a href="javascript:back_search_criteria.submit()">元に戻す</a>
