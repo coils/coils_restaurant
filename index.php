@@ -2,7 +2,7 @@
 /**
  * index.php
  * 
- * Restoracio トップページ
+ * Coils トップページ
  * 
  * @copyright (c) 2018 Yuki Tsuji
  */
@@ -16,11 +16,11 @@ require_once './require_once/functions.php';
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Yuki Tsuji">
-        <meta name="description" content="Restoracioは，レストラン情報を検索することが出来るWebアプリケーションです．">
+        <meta name="description" content="Coilsは，レストラン情報を検索することが出来るWebアプリケーションです．">
         <meta name="robots" content="noindex, nofollow, noarchive">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./css/restoracio.css" rel="stylesheet">
-        <title>Restoracio</title>
+        <link href="./css/coils.css" rel="stylesheet">
+        <title>Coils</title>
     </head>
     <body>
 
@@ -57,12 +57,12 @@ require_once './require_once/functions.php';
 
         <div class="word_wrap">
 
-            <h1>Restoracio</h1>
+            <h1><span style="color: #FF0000;">C</span><span style="color: #FFFF00;">o</span><span style="color: #00CC00;">i</span><span style="color: #0000FF;">l</span><span style="color: #800080;">s</span></h1>
 
             <fieldset>
-            <legend>Restoracioへようこそ</legend>
+            <legend>Coilsへようこそ</legend>
             <p>
-                Restoracioは，レストラン情報を検索することが出来るWebアプリケーションです．
+                Coilsは，レストラン情報を検索することが出来るWebアプリケーションです．
             </p>
             </fieldset>
 
