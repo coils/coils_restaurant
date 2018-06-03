@@ -1,12 +1,12 @@
-Restoracio
+Coils
 ====
-Restoracioは，現在位置周辺のレストラン情報を検索することが出来るWebアプリケーションです．
+Coilsは，現在位置周辺のレストラン情報を検索することが出来るWebアプリケーションです．
 
 レスポンシブWebデザインを使用しているので，スマートフォンに対応しています．
 
 使用する時は，gnavi_api_class.phpファイルのアクセスキーを変更して下さい．
 
-Restoracio is a web application that can search restaurant information near the current position.
+Coils is a web application that can search restaurant information near the current position.
 
 Since it uses responsive web design, it is compatible with smartphones.
 
@@ -18,9 +18,9 @@ When using, please change the access key of gnavi_api_class.php file.
 + Geolocation API
 
 ## Environment
-Restoracioは，以下の環境で動作確認を行いました．他の環境でも動作するかもしれませんが，サポートしていません．
+Coilsは，以下の環境で動作確認を行いました．他の環境でも動作するかもしれませんが，サポートしていません．
 
-I have tested Restoracio on the following environment. Restoracio may work on the other environment, but I do not support the other setting.
+I have tested Coils on the following environment. Coils may work on the other environment, but I do not support the other setting.
 
 + Apache 2.4
 
