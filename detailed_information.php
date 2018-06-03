@@ -22,7 +22,7 @@ $restaurants = Gnavi_api::getRestaurants();
         <meta name="description" content="店舗詳細情報">
         <meta name="robots" content="noindex, nofollow, noarchive">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./css/restoracio.css" rel="stylesheet">
+        <link href="./css/coils.css" rel="stylesheet">
         <title>店舗詳細情報</title>
     </head>
     <body>
