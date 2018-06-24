@@ -26,13 +26,9 @@ $restaurants = Gnavi_api::getRestaurants();
         <title>店舗詳細情報</title>
     </head>
     <body>
-
         <div class="word_wrap">
-
             <button type="button" onclick="history.back()" class="gray_button">戻る</button>
-
             <h1>店舗詳細情報</h1>
-
             <div>
                 <?php if (isset($restaurants->error)): ?>
                     <div>
@@ -208,23 +204,18 @@ $restaurants = Gnavi_api::getRestaurants();
                     </table>
                 <?php endif; ?>
             </div>
-
             <br />
-
             <div style="text-align: center;">
                 <a href="http://api.gnavi.co.jp/api/scope/" target="_blank">
                 <img src="http://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
                 </a>
             </div>
-
             <br />
-
             <div style="text-align: center;">
                 <form action="./" name="toppage" method="POST">
                     <a href="javascript:toppage.submit()">トップページ</a>
                 </form>
             </div>
-
             <footer>
                 <hr />
                 <div class="copyright">
