@@ -26,18 +26,14 @@ $restaurants = Gnavi_api::getRestaurants();
         <title>検索結果一覧</title>
     </head>
     <body>
-
-        <div class="word_wrap">
-
-            <form action="./" method="GET">
-                <input type="hidden" name="freeword" id="freeword" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
-                <input type="hidden" name="latitude" id="latitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
-                <input type="hidden" name="longitude" id="longitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>">
-                <button type="submit" class="gray_button">トップページ</button>
-            </form>
-
+        <form action="./" method="GET">
+            <input type="hidden" name="freeword" id="freeword" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
+            <input type="hidden" name="latitude" id="latitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
+            <input type="hidden" name="longitude" id="longitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>">
+            <button type="submit" class="gray_button">トップページ</button>
+        </form>
+        <div class="word_break">
             <h1>検索結果一覧</h1>
-
             <div>
                 <?php if (isset($restaurants->error)): ?>
                     <div>
@@ -51,8 +47,8 @@ $restaurants = Gnavi_api::getRestaurants();
                     <table class="type">
                         <thead>
                             <tr>
-                                <th>画像</th>
                                 <th>店舗名</th>
+                                <th>カテゴリー</th>
                                 <th>アクセス</th>
                             </tr>
                         </thead>
@@ -60,14 +56,8 @@ $restaurants = Gnavi_api::getRestaurants();
                             <?php if ($restaurants->total_hit_count == 1 || $restaurants->total_hit_count % 10 == 1 && $restaurants->page_offset == ceil($restaurants->total_hit_count / 10)): ?>
                                 <tr>
                                     <td>
-                                        <?php if (mb_strlen($restaurants->rest->image_url->shop_image1) >= 1): ?>
-                                            <div style="text-align: center;">
-                                                <img src="<?php echo h($restaurants->rest->image_url->shop_image1); ?>">
-                                            </div>
-                                        <?php elseif (mb_strlen($restaurants->rest->image_url->shop_image2) >= 1): ?>
-                                            <div style="text-align: center;">
-                                                <img src="<?php echo h($restaurants->rest->image_url->shop_image2); ?>">
-                                            </div>
+                                        <?php if (mb_strlen($restaurants->rest->name) >= 1): ?>
+                                            <a href="<?php echo h(shop_url($restaurants->rest->id)); ?>"><?php echo h($restaurants->rest->name); ?></a>
                                         <?php else: ?>
                                             <div class="gray_font">
                                                 <?php echo h('データが存在しません．'); ?>
@@ -75,8 +65,8 @@ $restaurants = Gnavi_api::getRestaurants();
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <?php if (mb_strlen($restaurants->rest->name) >= 1): ?>
-                                            <a href="<?php echo h(shop_url($restaurants->rest->id)); ?>"><?php echo h($restaurants->rest->name); ?></a>
+                                        <?php if (mb_strlen($restaurants->rest->category) >= 1): ?>
+                                            <?php echo h($restaurants->rest->category); ?>
                                         <?php else: ?>
                                             <div class="gray_font">
                                                 <?php echo h('データが存在しません．'); ?>
@@ -99,14 +89,8 @@ $restaurants = Gnavi_api::getRestaurants();
                                 <?php foreach ($restaurants->rest as $rest) : ?>
                                     <tr>
                                         <td>
-                                            <?php if (mb_strlen($rest->image_url->shop_image1) >= 1): ?>
-                                                <div style="text-align: center;">
-                                                    <img src="<?php echo h($rest->image_url->shop_image1); ?>">
-                                                </div>
-                                            <?php elseif (mb_strlen($rest->image_url->shop_image2) >= 1): ?>
-                                                <div style="text-align: center;">
-                                                    <img src="<?php echo h($rest->image_url->shop_image2); ?>">
-                                                </div>
+                                            <?php if (mb_strlen($rest->name) >= 1): ?>
+                                                <a href="<?php echo h(shop_url($rest->id)); ?>"><?php echo h($rest->name); ?></a>
                                             <?php else: ?>
                                                 <div class="gray_font">
                                                     <?php echo h('データが存在しません．'); ?>
@@ -114,8 +98,8 @@ $restaurants = Gnavi_api::getRestaurants();
                                             <?php endif; ?>
                                         </td>
                                         <td>
-                                            <?php if (mb_strlen($rest->name) >= 1): ?>
-                                                <a href="<?php echo h(shop_url($rest->id)); ?>"><?php echo h($rest->name); ?></a>
+                                            <?php if (mb_strlen($rest->category) >= 1): ?>
+                                                <?php echo h($rest->category); ?>
                                             <?php else: ?>
                                                 <div class="gray_font">
                                                     <?php echo h('データが存在しません．'); ?>
@@ -138,7 +122,6 @@ $restaurants = Gnavi_api::getRestaurants();
                             <?php endif; ?>
                         </tbody>
                     </table>
-
                     <div>
                         <?php if ($restaurants->total_hit_count <= 1000): ?>
                             <?php echo paging($restaurants->page_offset, $restaurants->total_hit_count); ?>
@@ -146,18 +129,14 @@ $restaurants = Gnavi_api::getRestaurants();
                             <?php echo paging($restaurants->page_offset, 1000); ?>
                         <?php endif; ?>
                     </div>
-
                 <?php endif; ?>
             </div>
-
             <br />
-
             <div style="text-align: center;">
                 <a href="http://api.gnavi.co.jp/api/scope/" target="_blank">
                 <img src="http://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
                 </a>
             </div>
-
             <footer>
                 <hr />
                 <div class="copyright">
