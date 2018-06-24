@@ -2,7 +2,7 @@
 /**
  * index.php
  * 
- * Coils トップページ
+ * Coilsレストラン検索 トップページ
  * 
  * @copyright (c) 2018 Yuki Tsuji
  */
@@ -16,18 +16,17 @@ require_once './require_once/functions.php';
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Yuki Tsuji">
-        <meta name="description" content="Coilsは，レストラン情報を検索することが出来るWebアプリケーションです．">
+        <meta name="description" content="Coilsレストラン検索は，レストラン情報を検索することが出来るWebアプリケーションです．">
         <meta name="robots" content="noindex, nofollow, noarchive">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./css/coils.css" rel="stylesheet">
-        <title>Coils</title>
+        <title>Coilsレストラン検索</title>
     </head>
     <body>
-
         <script>
-            // 現在地取得処理
+            // 現在位置取得処理
             function getPosition() {
-                // 現在地を取得
+                // 現在位置を取得
                 navigator.geolocation.getCurrentPosition(
                     // 取得成功した場合，緯度と経度のフォームに現在位置の座標を入力
                     function(position) {
@@ -54,20 +53,15 @@ require_once './require_once/functions.php';
                 );
             }
         </script>
-
         <div class="word_wrap">
-
-            <h1><span style="color: #FF0000;">C</span><span style="color: #FFFF00;">o</span><span style="color: #00CC00;">i</span><span style="color: #0000FF;">l</span><span style="color: #800080;">s</span></h1>
-
+            <h1>Coilsレストラン検索</h1>
             <fieldset>
-            <legend>Coilsへようこそ</legend>
+            <legend>Coilsレストラン検索へようこそ</legend>
             <p>
-                Coilsは，レストラン情報を検索することが出来るWebアプリケーションです．
+                Coilsレストラン検索は，レストラン情報を検索することが出来るWebアプリケーションです．
             </p>
             </fieldset>
-
             <br />
-
             <?php if (@$_SESSION['search_criteria'] === 'search_criteria'): ?>
                 <fieldset>
                 <legend>位置情報取得</legend>
@@ -80,7 +74,6 @@ require_once './require_once/functions.php';
                 </fieldset>
                 <br />
             <?php endif; ?>
-
             <fieldset>
             <legend>検索条件入力フォーム</legend>
             <div style="text-align: center;">
@@ -126,9 +119,7 @@ require_once './require_once/functions.php';
                 <?php endif; ?>
             </div>
             </fieldset>
-
             <br />
-
             <footer>
                 <hr />
                 <div class="copyright">
