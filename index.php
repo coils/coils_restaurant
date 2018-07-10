@@ -94,11 +94,11 @@ require_once './require_once/functions.php';
                         <p>
                             <label for="range">範囲(半径)</label><br />
                             <select id="range" name="range">
-                                <option value="1">300m</option>
-                                <option value="2">500m</option>
-                                <option value="3" selected>1km</option>
-                                <option value="4">2km</option>
-                                <option value="5">3km</option>
+                                <option value="1"<?php echo filter_input(INPUT_GET, 'range') === '1' ? h(' selected') : h(''); ?>>300m</option>
+                                <option value="2"<?php echo filter_input(INPUT_GET, 'range') === '2' ? h(' selected') : h(''); ?>>500m</option>
+                                <option value="3"<?php echo filter_input(INPUT_GET, 'range') === '3' || empty(filter_input(INPUT_GET, 'range')) ? h(' selected') : h(''); ?>>1km</option>
+                                <option value="4"<?php echo filter_input(INPUT_GET, 'range') === '4' ? h(' selected') : h(''); ?>>2km</option>
+                                <option value="5"<?php echo filter_input(INPUT_GET, 'range') === '5' ? h(' selected') : h(''); ?>>3km</option>
                             </select>
                         </p>
                     <?php endif; ?>
