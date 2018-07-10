@@ -30,6 +30,7 @@ $restaurants = Gnavi_api::getRestaurants();
             <input type="hidden" name="freeword" id="freeword" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'freeword')); ?>">
             <input type="hidden" name="latitude" id="latitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'latitude')); ?>">
             <input type="hidden" name="longitude" id="longitude" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'longitude')); ?>">
+            <input type="hidden" name="range" id="range" maxlength="100" value="<?php echo h(filter_input(INPUT_GET, 'range')); ?>">
             <button type="submit" class="gray_button">トップページ</button>
         </form>
         <div class="word_break">
